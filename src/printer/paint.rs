@@ -35,6 +35,9 @@ impl Printer {
         for j in 0..v.height{
             for i in 0..v.width{
                 if it.next().unwrap(){
+                    if y < j * self.size{
+                        continue;
+                    }
                     self.draw_block(x + i * self.size, y - j * self.size, img)
                 }
             }
